@@ -1,5 +1,7 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { registerLocaleData } from '@angular/common';
+import locale from '@angular/common/locales/zh-Hans';
 
 import { WindowRef } from './tracker/window.service';
 import {
@@ -25,7 +27,7 @@ import {
         Title,
         {
             provide: LOCALE_ID,
-            useValue: 'zh-cn'
+            useValue: 'zh-Hans'
         },
     ],
     exports: [
@@ -35,4 +37,8 @@ import {
         JhiAlertErrorComponent
     ]
 })
-export class GatewaySharedCommonModule {}
+export class GatewaySharedCommonModule {
+    constructor() {
+        registerLocaleData(locale);
+    }
+}
