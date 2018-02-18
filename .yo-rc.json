@@ -4,7 +4,7 @@
       "packageName": "cn.ctodb.msp.gateway",
       "nativeLanguage": "zh-cn"
     },
-    "jhipsterVersion": "4.10.2",
+    "jhipsterVersion": "4.14.0",
     "baseName": "gateway",
     "packageName": "cn.ctodb.msp.gateway",
     "packageFolder": "cn/ctodb/msp/gateway",
@@ -33,6 +33,8 @@
     "nativeLanguage": "zh-cn",
     "languages": [
       "zh-cn"
-    ]
+    ],
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false
   }
 }

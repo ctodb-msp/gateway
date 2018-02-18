@@ -7,7 +7,6 @@ import { GatewaySharedModule } from '../shared';
 
 import {
     adminState,
-    AuditsComponent,
     UserMgmtComponent,
     UserDialogComponent,
     UserDeleteDialogComponent,
@@ -21,7 +20,6 @@ import {
     JhiHealthCheckComponent,
     JhiConfigurationComponent,
     JhiDocsComponent,
-    AuditsService,
     JhiConfigurationService,
     JhiHealthService,
     JhiMetricsService,
@@ -37,11 +35,10 @@ import {
 @NgModule({
     imports: [
         GatewaySharedModule,
-        RouterModule.forRoot(adminState, { useHash: true }),
+        RouterModule.forChild(adminState),
         /* jhipster-needle-add-admin-module - JHipster will add admin modules here */
     ],
     declarations: [
-        AuditsComponent,
         UserMgmtComponent,
         UserDialogComponent,
         UserDeleteDialogComponent,
@@ -65,7 +62,6 @@ import {
         JhiMetricsMonitoringModalComponent,
     ],
     providers: [
-        AuditsService,
         JhiConfigurationService,
         JhiHealthService,
         JhiMetricsService,

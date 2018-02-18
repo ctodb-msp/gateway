@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
-import { LocalStorageService, SessionStorageService } from 'ng2-webstorage';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { SERVER_API_URL } from '../../app.constants';
 
 @Injectable()
 export class AuthServerProvider {
     constructor(
-        private http: Http    ) {}
+        private http: HttpClient    ) {}
 
     getToken() {
         return null;
@@ -18,7 +18,7 @@ export class AuthServerProvider {
             password: credentials.password,
             rememberMe: credentials.rememberMe
         };
-        return this.http.post('auth/login', data, {});
+        return this.http.post(SERVER_API_URL + 'auth/login', data, {});
     }
 
     loginWithToken(jwt, rememberMe) {
@@ -34,6 +34,6 @@ export class AuthServerProvider {
     }
 
     logout(): Observable<any> {
-        return this.http.post('/auth/logout', null);
+        return this.http.post(SERVER_API_URL + 'auth/logout', null);
     }
 }
